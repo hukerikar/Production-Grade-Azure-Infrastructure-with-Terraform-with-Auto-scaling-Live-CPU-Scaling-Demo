@@ -1,5 +1,7 @@
 # 🚀 Production-Grade Azure Infrastructure with Terraform – Auto Scaling Demo
 
+[![Watch the demo](https://img.youtube.com/vi/z1xgDxK7fOM/maxresdefault.jpg)](https://www.youtube.com/watch?v=z1xgDxK7fOM&t=23s)
+
 ▶ **Watch the complete live demo here:**  
 https://www.youtube.com/watch?v=z1xgDxK7fOM&t=23s
 
@@ -94,18 +96,21 @@ It also highlights how **cloud platforms manage infrastructure dynamically** to 
 
 # ⚠️ Challenges Faced
 
-During development, some challenges were encountered due to **Azure free subscription limitations**.
 
-Several Linux VM sizes were not available under the free tier.  
-Additionally, some VM sizes were **not supported in specific Azure regions**, which required multiple deployment attempts while adjusting:
+One of the main challenges during this project was **triggering the autoscaling behavior using CPU utilization**.
 
-- VM size
-- Region
-- Configuration parameters
+Initially, even after generating load on the virtual machines, the **CPU utilization metric was not increasing enough to trigger the autoscale rule**.
 
-This process required some **trial and error**, but it also helped in understanding how **Azure resource availability varies across regions and subscription tiers**.
+To simulate higher CPU load, additional stress commands were executed on the VM instances. However, even after generating artificial load, the CPU usage still remained below the autoscaling threshold.
+
+After several troubleshooting attempts and testing different configurations, the autoscale rule threshold was adjusted to **1% CPU utilization** in order to properly observe the scaling behavior during the demo.
+
+Once the threshold was lowered, Azure Monitor successfully detected the CPU activity and the **VM Scale Set began scaling out as expected**, demonstrating the autoscaling functionality in real time.
+
+This process required multiple iterations and helped in better understanding how **Azure autoscale metrics and evaluation windows behave in practical scenarios**.
 
 ---
+
 
 # 🎯 Project Goal
 
