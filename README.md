@@ -1,4 +1,4 @@
-# 🚀 Production-Grade Azure Infrastructure with Terraform – Auto Scaling Demo
+# 🚀 Azure Infrastructure with Terraform – Auto Scaling Demo
 
 [![Watch the demo](https://img.youtube.com/vi/z1xgDxK7fOM/maxresdefault.jpg)](https://www.youtube.com/watch?v=z1xgDxK7fOM&t=23s)
 
